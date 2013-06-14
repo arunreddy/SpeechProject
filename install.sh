@@ -1,3 +1,0 @@
- mvn deploy:deploy-file -Dfile=/home/arun/devel/code/cmusphinx-code/sphinx4/lib/WSJ_8gau_13dCep_8kHz_31mel_200Hz_3500Hz.jar  -DgroupId=javax.speech.wsj  -DartifactId=WSJ_8gau_13dCep_8kHz_31mel_200Hz_3500Hz  -Dversion=1.0  -Dpackaging=jar -DrepositoryId=archiva.internal -Durl=http://tsunami.sese.asu.edu:8080/archiva/repository/internal/
- mvn install:install-file -Dfile=/home/arun/devel/code/cmusphinx-code/sphinx4/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar -DgroupId=javax.speech.wsj -DartifactId=WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz -Dversion=1.0 -DrepositoryId=archiva.internal -Durl=http://tsunami.sese.asu.edu:8080/archiva/repository/internal/ -Dpackaging=jar
-
