@@ -15,6 +15,14 @@ public class SpeechToText
     private ConfigurationManager cm;
 
     private Recognizer recognizer;
+    
+    
+    /**
+     * Pick the default configuration file.
+     */
+    public SpeechToText(){
+    	this(SpeechToText.class.getResource("/config.xml"));
+    }
 
     /**
      * @param configURL
@@ -60,4 +68,11 @@ public class SpeechToText
         return speechString;
     }
 
+	public Recognizer getRecognizer() {
+		return recognizer;
+	}
+
+    
+    
+    
 }

@@ -1,23 +1,23 @@
-package net.arunreddy.speech.audio.wav;
+package net.arunreddy.speech.audio.type;
 
-public class WavFileException extends Exception
+public class AudioTypeException extends Exception
 {
-	public WavFileException()
+	public AudioTypeException()
 	{
 		super();
 	}
 
-	public WavFileException(String message)
+	public AudioTypeException(String message)
 	{
 		super(message);
 	}
 
-	public WavFileException(String message, Throwable cause)
+	public AudioTypeException(String message, Throwable cause)
 	{
 		super(message, cause);
 	}
 
-	public WavFileException(Throwable cause) 
+	public AudioTypeException(Throwable cause) 
 	{
 		super(cause);
 	}
