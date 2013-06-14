@@ -23,6 +23,11 @@ public class AudioFile {
 	private long frames;
 	private double duration;
 
+	
+	public AudioFile(){
+		
+	}
+	
 	public AudioFile(URI path) throws AudioException {
 		this.path = path;
 

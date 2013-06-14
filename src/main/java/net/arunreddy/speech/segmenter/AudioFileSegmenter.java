@@ -45,6 +45,7 @@ public class AudioFileSegmenter {
 			String transcription = stt
 					.speechToText(audioFile.getPath().toURL());
 
+			System.out.println("DURATION:"+audioFile.getDuration());
 			Aligner aligner = new Aligner();
 			File file = new File(audioFile.getPath());
 			ArrayList<WordResult> wordResults = aligner.align(file,
@@ -86,7 +87,7 @@ public class AudioFileSegmenter {
 					Word word = pr.getWord();
 
 					String audioFileInternalPath = file.getPath().replaceAll(
-							rootDirectory.getPath(), "");
+							System.getenv("speech_data_dir"), "");
 
 					// Write file to
 					File audioFileDirectory = new File(rootDirectory,

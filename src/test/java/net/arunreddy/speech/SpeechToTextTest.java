@@ -21,37 +21,45 @@ package net.arunreddy.speech;
 
 import java.io.File;
 import java.net.URL;
+import java.util.List;
 
-import net.arunreddy.speech.SpeechToText;
+import net.arunreddy.speech.segmenter.AudioFileSegmenter;
 
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * @version $Id$
  */
-public class SpeechToTextTest
-{
+public class SpeechToTextTest {
 
-    @Test
-    public void testSpeech()
-    {
-        try {
-            URL audioURL = new File("/home/arun/devel/datasets/speech/DigitData-wavs/101/101_m01.wav").toURI().toURL();
+	@Test
+	public void testSpeech() {
+		try {
+			URL audioURL = new File(
+					"/home/arun/devel/datasets/speech/DigitData-wavs/101/101_m01.wav")
+					.toURI().toURL();
 
-            URL configURL = this.getClass().getResource("/config.xml");
+			URL configURL = this.getClass().getResource("/config.xml");
 
-            Assert.assertNotNull(configURL);
-            SpeechToText stt = new SpeechToText(configURL);
-            
-            String speechToText=stt.speechToText(audioURL);
-            
-            Assert.assertEquals("train eight arrives in new orleans at five fifteen", speechToText);
-            
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+			Assert.assertNotNull(configURL);
+			SpeechToText stt = new SpeechToText(configURL);
+
+			String speechToText = stt.speechToText(audioURL);
+
+			Assert.assertEquals(
+					"train eight arrives in new orleans at five fifteen",
+					speechToText);
+
+			AudioFile audioFile = new AudioFile(audioURL.toURI());
+			List<AudioSegment> list = new AudioFileSegmenter()
+					.segmentAudioFile(audioFile);
+			
+			System.out.println(list);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }
