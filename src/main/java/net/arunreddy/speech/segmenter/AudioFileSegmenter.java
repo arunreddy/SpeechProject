@@ -22,34 +22,25 @@ import edu.cmu.sphinx.result.WordResult;
  * 
  */
 public class AudioFileSegmenter {
-
-	private URL configURL;
-
 	/**
 	 * Use default audio segmenter.
 	 */
 	public AudioFileSegmenter() {
-		this(AudioFileSegmenter.class.getResource("/config.xml"));
-	}
-
-	public AudioFileSegmenter(URL configURL) {
-		this.configURL = configURL;
 	}
 
 	public List<AudioSegment> segmentAudioFile(AudioFile audioFile)
 			throws SegmenterException {
 		List<AudioSegment> audioSegments = null;
 		try {
-			audioSegments = new ArrayList<AudioSegment>();
-			SpeechToText stt = new SpeechToText(this.configURL);
-			String transcription = stt
-					.speechToText(audioFile.getPath().toURL());
 
-			System.out.println("DURATION:"+audioFile.getDuration());
+			System.out.println("Printing Audio File :" + audioFile);
+			audioSegments = new ArrayList<AudioSegment>();
+
+			System.out.println("DURATION:" + audioFile.getDuration());
 			Aligner aligner = new Aligner();
 			File file = new File(audioFile.getPath());
 			ArrayList<WordResult> wordResults = aligner.align(file,
-					transcription);
+					audioFile.getTranscription());
 
 			// Create output directory.
 			File rootDirectory = new File(System.getenv("speech_data_dir"),
@@ -110,6 +101,7 @@ public class AudioFileSegmenter {
 							.getSampleRate()) * 1000;
 					AudioSegment audioSegment = new AudioSegment(
 							word.getSpelling(), framesWritten, duration);
+					audioSegment.setPath(segmentFile.toURI());
 
 					System.out.format("%s :: Start:%d  End:%d \n",
 							word.getSpelling(), startFrame, endFrame);

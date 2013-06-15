@@ -11,3 +11,4 @@
 *.wav
 
 *.sh
+/target

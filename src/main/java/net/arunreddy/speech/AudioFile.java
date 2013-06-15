@@ -22,8 +22,23 @@ public class AudioFile {
 	private int bitDepth;
 	private long frames;
 	private double duration;
+	private String transcription;
 
 	
+	/**
+	 * @return the transcription
+	 */
+	public String getTranscription() {
+		return transcription;
+	}
+
+	/**
+	 * @param transcription the transcription to set
+	 */
+	public void setTranscription(String transcription) {
+		this.transcription = transcription;
+	}
+
 	public AudioFile(){
 		
 	}
@@ -120,5 +135,19 @@ public class AudioFile {
 	public void setDuration(double duration) {
 		this.duration = duration;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "AudioFile [path=" + path + ", name=" + name + ", mimetype="
+				+ mimetype + ", channels=" + channels + ", sampleRate="
+				+ sampleRate + ", bitDepth=" + bitDepth + ", frames=" + frames
+				+ ", duration=" + duration + "]";
+	}
+	
+	
+	
 
 }

@@ -5,19 +5,21 @@
 	<artifactId>speech-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-  <distributionManagement>
-    <repository>
-      <id>archiva.internal</id>
-      <name>Internal Release Repository</name>
-      <url>http://${env.deploymentServer}/internal/</url>
-    </repository>
-    <snapshotRepository>
-      <id>archiva.snapshots</id>
-      <name>Internal Snapshot Repository</name>
-      <url>http://${env.deploymentServer}/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
+	<distributionManagement>
+		<repository>
+			<id>archiva.internal</id>
+			<name>Internal Release Repository</name>
+			<url>http://${env.deploymentServer}/internal/</url>
+		</repository>
+		<snapshotRepository>
+			<id>archiva.snapshots</id>
+			<name>Internal Snapshot Repository</name>
+			<url>http://${env.deploymentServer}/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
+	<name>Speech Utils</name>
+	<url>http://github.com/arunreddy</url>
 
 	<build>
 		<resources>
@@ -27,6 +29,12 @@
 			</resource>
 		</resources>
 	</build>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4j.version>1.7.5</slf4j.version>
+		<logback.version>1.0.13</logback.version>
+	</properties>
 
 
 	<dependencies>
@@ -61,6 +69,5 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 </project>
