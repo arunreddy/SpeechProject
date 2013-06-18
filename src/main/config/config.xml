@@ -114,7 +114,7 @@
 	<component name="trigramModel"
 		type="edu.cmu.sphinx.linguist.language.ngram.SimpleNGramModel">
 		<property name="location"
-			value="file:/home/arun/devel/datasets/speech/DigitData-wavs/lm/1966.lm" />
+			value="/Users/venus/arun/drive/git/SpeechProject/src/main/resources/DigitData-wavs/lm/1966.lm" />
 		<property name="logMath" value="logMath" />
 		<property name="dictionary" value="dictionary" />
 		<property name="maxDepth" value="3" />
