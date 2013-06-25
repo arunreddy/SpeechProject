@@ -25,9 +25,8 @@ public class Aligner
     public Aligner()
     {
         try {
-            acousticModel = new URL("file:/home/arun/devel/code/cmusphinx-code/sphinx4/models/acoustic/wsj");
-            dictionary =
-                new URL("file:/home/arun/devel/code/cmusphinx-code/sphinx4/models/acoustic/wsj/dict/cmudict.0.6d");
+            acousticModel = this.getClass().getResource("/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz");
+            dictionary = this.getClass().getResource("/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d");
             aligner = new GrammarAligner(acousticModel, dictionary, null);
 
         } catch (Exception e) {

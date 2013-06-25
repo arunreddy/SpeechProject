@@ -15,13 +15,14 @@ public class SpeechToText
     private ConfigurationManager cm;
 
     private Recognizer recognizer;
-    
-    
+
     /**
      * Pick the default configuration file.
      */
-    public SpeechToText(){
-    	this(SpeechToText.class.getResource("/config.xml"));
+    public SpeechToText()
+    {
+
+        this(SpeechToText.class.getResource("/config.xml"));
     }
 
     /**
@@ -54,11 +55,11 @@ public class SpeechToText
             // null.
             Result result;
 
-            StringBuilder builder=new StringBuilder();
+            StringBuilder builder = new StringBuilder();
             while ((result = recognizer.recognize()) != null) {
-                builder.append(result.getBestResultNoFiller()+" ");                
+                builder.append(result.getBestResultNoFiller() + " ");
             }
-            speechString=builder.toString().trim();
+            speechString = builder.toString().trim();
 
             recognizer.deallocate();
         } catch (Exception e) {
@@ -68,11 +69,9 @@ public class SpeechToText
         return speechString;
     }
 
-	public Recognizer getRecognizer() {
-		return recognizer;
-	}
+    public Recognizer getRecognizer()
+    {
+        return recognizer;
+    }
 
-    
-    
-    
 }

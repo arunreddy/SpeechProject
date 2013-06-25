@@ -31,35 +31,26 @@ import org.junit.Test;
 /**
  * @version $Id$
  */
-public class SpeechToTextTest {
+public class SpeechToTextTest
+{
 
-	@Test
-	public void testSpeech() {
-		try {
-			URL audioURL = new File(
-					"/home/arun/devel/datasets/speech/DigitData-wavs/101/101_m01.wav")
-					.toURI().toURL();
+    @Test
+    public void testSpeech()
+    {
+        try {
+            URL audioURL = this.getClass().getResource("/101_m01.wav");
+            URL configURL = this.getClass().getResource("/DigitData-wavs/config.xml");
 
-			URL configURL = this.getClass().getResource("/config.xml");
+            Assert.assertNotNull(configURL);
+            SpeechToText stt = new SpeechToText(configURL);
 
-			Assert.assertNotNull(configURL);
-			SpeechToText stt = new SpeechToText(configURL);
+            String speechToText = stt.speechToText(audioURL);
 
-			String speechToText = stt.speechToText(audioURL);
+            Assert.assertEquals("train eight arrives in new orleans at five fifteen", speechToText);
 
-			Assert.assertEquals(
-					"train eight arrives in new orleans at five fifteen",
-					speechToText);
-
-			AudioFile audioFile = new AudioFile(audioURL.toURI());
-			List<AudioSegment> list = new AudioFileSegmenter()
-					.segmentAudioFile(audioFile);
-			
-			System.out.println(list);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

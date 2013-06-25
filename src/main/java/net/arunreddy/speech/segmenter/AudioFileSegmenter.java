@@ -22,7 +22,10 @@ import edu.cmu.sphinx.result.WordResult;
  * 
  */
 public class AudioFileSegmenter {
-	/**
+    
+ 
+
+    /**
 	 * Use default audio segmenter.
 	 */
 	public AudioFileSegmenter() {
@@ -33,10 +36,8 @@ public class AudioFileSegmenter {
 		List<AudioSegment> audioSegments = null;
 		try {
 
-			System.out.println("Printing Audio File :" + audioFile);
 			audioSegments = new ArrayList<AudioSegment>();
 
-			System.out.println("DURATION:" + audioFile.getDuration());
 			Aligner aligner = new Aligner();
 			File file = new File(audioFile.getPath());
 			ArrayList<WordResult> wordResults = aligner.align(file,
