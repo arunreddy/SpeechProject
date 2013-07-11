@@ -82,6 +82,12 @@ public class DictionaryGenerator
         return (int)(Math.random()*cities.length)-1;
     }
     
+    public String getRandomUtterance(){
+    	int index = (int)(Math.random()*cities.length);
+    	String announcement="train number "+NumberToText.convert(trainNumber())+" leaves "+cities[index]+" at "+NumberToText.convert(randomHour())+" "+NumberToText.convert(randomMinute());
+    	return announcement;
+    }
+    
     private static String[] cities = {"aberdeen", "abilene", "akron", "albany", "albuquerque", "alexandria", "allentown",
     "amarillo", "anaheim", "anchorage", "ann arbor", "antioch", "apple valley", "appleton", "arlington", "arvada",
     "asheville", "athens", "atlanta", "atlantic city", "augusta", "aurora", "austin", "bakersfield", "baltimore",
