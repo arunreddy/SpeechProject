@@ -101,26 +101,15 @@
 		<property name="unitManager" value="unitManager" />
 	</component>
 
-	<!-- component name="trigramModel"
+	<component name="trigramModel"
 		type="edu.cmu.sphinx.linguist.language.ngram.large.LargeTrigramModel">
 		<property name="unigramWeight" value=".5" />
 		<property name="maxDepth" value="3" />
 		<property name="logMath" value="logMath" />
 		<property name="dictionary" value="dictionary" />
 		<property name="location"
-			value="/home/arun/devel/code/cmusphinx-code/sphinx4/models/language/en-us.lm.dmp" />
-	</component-->
-
-	<component name="trigramModel"
-		type="edu.cmu.sphinx.linguist.language.ngram.SimpleNGramModel">
-		<property name="location"
-			value="/Users/venus/arun/drive/git/SpeechProject/src/main/resources/DigitData-wavs/lm/1966.lm" />
-		<property name="logMath" value="logMath" />
-		<property name="dictionary" value="dictionary" />
-		<property name="maxDepth" value="3" />
-		<property name="unigramWeight" value=".7" />
+			value="/home/arun/code/src/cmusphinx-code/sphinx4/models/language/en-us.lm.dmp" />
 	</component>
-
 
 	<component name="wsj"
 		type="edu.cmu.sphinx.linguist.acoustic.tiedstate.TiedStateAcousticModel">
