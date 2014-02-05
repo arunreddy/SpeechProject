@@ -6,20 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>Speech Utils</name>
-	<url>http://github.com/arunreddy</url>
-
-	<distributionManagement>
-	  <repository>
-	        <id>deployment</id>
-	     	<name>Internal Releases</name>
-	      	<url>http://tsnumai.sese.asu.edu:8081/nexus/content/repositories/releases/</url>
-	  </repository>
-	  <snapshotRepository>
-	        <id>deployment</id>
-	        <name>Internal Releases</name>
-            	<url>http://tsunami.sese.asu.edu:8081/nexus/content/repositories/snapshots/</url>
-	  </snapshotRepository>
-  	</distributionManagement>  
+	<url>http://github.com/arunreddy</url> 
 
 	<build>
 		<resources>
@@ -39,19 +26,14 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>edu.cmu.sphinx</groupId>
-			<artifactId>sphinx4</artifactId>
-			<version>1.0-beta-4</version>
+		  <groupId>edu.cmu.sphinx</groupId>
+		  <artifactId>sphinx4</artifactId>
+		  <version>1.0Beta5</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.speech</groupId>
-			<artifactId>jsapi</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.speech</groupId>
-			<artifactId>js</artifactId>
-			<version>1.0</version>
+		  <groupId>javax.speech</groupId>
+		  <artifactId>js</artifactId>
+		  <version>1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.speech</groupId>
@@ -84,17 +66,5 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.5</version>
         </dependency>
-        <dependency>
-            <groupId>net.arunreddy.speechbrowser</groupId>
-            <artifactId>digitwavs</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>net.arunreddy.speechbrowser</groupId>
-            <artifactId>digitdatawav</artifactId>
-            <version>1.0</version>
-        </dependency>
-        
-        
 	</dependencies>
 </project>
